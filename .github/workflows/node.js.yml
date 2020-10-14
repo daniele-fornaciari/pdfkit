@@ -24,7 +24,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: echo //nexus.devtools.ddns.net/repository/npm/:_authToken=${{NPM_TOKEN}} >> .npmrc
+    - run: echo //nexus.devtools.ddns.net/repository/npm/:_authToken=${{ secrets.NPM_TOKEN }} >> .npmrc
     - run: npm ci
     - run: npm run build --if-present
     - run: npm publish
