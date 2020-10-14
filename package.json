@@ -1,5 +1,5 @@
 {
-  "name": "pdfkit",
+  "name": "@helvetia/pdfkit",
   "description": "A PDF generation library for Node.js",
   "keywords": [
     "pdf",
@@ -89,5 +89,8 @@
       "default",
       "jest-screenshot/reporter"
     ]
+  },
+  "publishConfig": {
+    "@helvetia:registry": "http://nexus.devtools.ddns.net/repository/npm/"
   }
 }
