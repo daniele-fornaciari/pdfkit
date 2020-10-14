@@ -5,7 +5,7 @@ import PDFFontFactory from '../../lib/font_factory';
 
 // manual mock for PDFSecurity to ensure stored id will be the same accross different systems
 PDFSecurity.generateFileID = () => {
-  return new Buffer('mocked-pdf-id');
+  return Buffer.from('mocked-pdf-id');
 };
 
 function escapeRegExp(string) {
@@ -66,7 +66,7 @@ describe('acroform', () => {
   test('init no fonts', () => {
     doc.addPage();
     const docData = logData(doc);
-    const font = PDFFontFactory.open(doc, 'tests/fonts/Roboto-Regular.ttf');
+    PDFFontFactory.open(doc, 'tests/fonts/Roboto-Regular.ttf');
     doc.initForm();
     expect(docData.length).toBe(0);
   });

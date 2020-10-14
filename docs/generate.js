@@ -181,7 +181,7 @@ class Node {
 
     const options = {};
     options.align = this.style.align;
-    options.link = this.attrs.href || false; // override continued link
+    options.link = this.attrs.href || null; // override continued link
     if (this.attrs.continued != null) {
       options.continued = this.attrs.continued;
     }
@@ -286,7 +286,7 @@ const render = (doc, filename) => {
 };
 
 // renders the title page of the guide
-const renderTitlePage = (doc) => {
+const renderTitlePage = doc => {
   const title = 'PDFKit Guide';
   const author = 'By Devon Govett';
   const version = `Version ${require('../package.json').version}`;
